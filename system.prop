@@ -1,16 +1,10 @@
 #
 # system.prop for c8813
 #
-#ro.vendor.extension_library=/system/lib/libqc-opt.so
 rild.libpath=/system/lib/libril-qc-1.so
 rild.libargs=-d /dev/smd0
-#ro.telephony.ril_class=QualcommSharedRIL
 ro.telephony.ril_class=HuaweiQualcommRIL
-ro.telephony.ril.v3=skippinpukcount,qcomdsds
-ro.cdma.home.operator.numeric=46003
-ro.telephony.default_network=4
-ro.cdma.factory=china
-ro.config.cdma_subscription=0
+ro.telephony.call_ring.delay=3000
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 debug.sf.hw=1
@@ -150,9 +144,6 @@ net.tcp.fin.aggregation = 1
 
 # gps_check
 ro.config.is_agps_disable=0
-
-# libril-qc-1.so
-ro.config.hw_cdma_cdg=false
 
 # VM
 dalvik.vm.dexopt-data-only=1
