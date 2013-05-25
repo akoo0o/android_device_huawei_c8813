@@ -18,7 +18,7 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME   "HUAWEI C8813"
+#define BTM_DEF_LOCAL_NAME   "HUAWEI g510"
 #define BTA_DISABLE_DELAY 1000 /* in milliseconds */
 
 #endif

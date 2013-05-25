@@ -1,5 +1,3 @@
-USE_CAMERA_STUB := false
-
 # inherit from the proprietary version
 -include vendor/huawei/c8813/BoardConfigVendor.mk
 
@@ -42,15 +40,15 @@ BOARD_USES_QCOM_HARDWARE := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
 
 # Video
-COMMON_GLOBAL_CFLAGS += -DQCOM_NO_SECURE_PLAYBACK
+COMMON_GLOBAL_CFLAGS += -DQCOM_NO_SECURE_PLAYBACK -DQCOM_LEGACY_OMX
 
 # Audio
 TARGET_PROVIDES_LIBAUDIO := true
 
 # Camera
+USE_CAMERA_STUB := false
 BOARD_NEEDS_MEMORYHEAPPMEM := true
-
-BOARD_USES_QCOM_LIBS := true
+COMMON_GLOBAL_CFLAGS += -DQCOM_HUAWEI_HARDWARE
 
 # GPS
 BOARD_USES_QCOM_LIBRPC := true
@@ -109,7 +107,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # Kernel 
 TARGET_KERNEL_SOURCE := kernel/huawei/msm8x25
 TARGET_KERNEL_CONFIG := cm_msm8x25_defconfig
-TARGET_PREBUILT_KERNEL := device/huawei/c8813/kernel
+# TARGET_PREBUILT_KERNEL := device/huawei/c8813/kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=huawei loglevel=1
 BOARD_KERNEL_BASE := 0x00200000
 BOARD_PAGE_SIZE := 2048
@@ -137,9 +135,6 @@ TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_NO_REBOOT_BOOTLOADER := true
-# CN
-#TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/c8813/recovery/graphics_cn.c
-# EN
 TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/c8813/recovery/graphics.c
 TARGET_RECOVERY_INITRC := device/huawei/c8813/recovery/recovery.rc
 
